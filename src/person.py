@@ -7,6 +7,3 @@ class person:
         self.birthdate = birthdate
         self.address = address
         self.phone = phone
-
-    
-        
