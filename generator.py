@@ -4,6 +4,7 @@ import string
 from secrets import choice
 
 class Generator:
+### For The Person
 
 
     #Extract Random First Name, Last Name, and Gender from the sample file
@@ -49,6 +50,7 @@ class Generator:
         cpr = firstThree + lastOne
         return cpr
 
+# For The Address
 
     #Extracts random street name from the provided sample file
     # Input - sample file location
