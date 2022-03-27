@@ -54,6 +54,7 @@ The Application must:
 - Return fake person information in bulk (all information for 2 to 100 persons)
 
 ---
+
 #### Testing 
 The following testing-related tasks must be implemented:
 - Writing unit tests and integration tests whenever it is considered appropriate
@@ -63,6 +64,8 @@ The following testing-related tasks must be implemented:
 - Use static testing tools toanalyse and improve the code. Also for white-box analysis, if the chosen unit testing framework does not provide it
 - Create a Continuous Integration job or pipeline to test the integration of the application
 - Run all unit and integration tests in the CI process
+
+---
 
 
 
