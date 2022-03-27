@@ -36,18 +36,23 @@ class Generator:
 
 
     #Generate Last 4 digits of a CPR
-    # Input - gender 'male' or 'female'
-    # Output - String: random 4 digit number, even for females, odd for males 
+    # Input - gender 'male' or 'female', birthday of dd-mm-yyyy format
+    # Output - String: birthday without '-' + random 4 digit number, even for females, odd for males 
     @staticmethod
-    def genCPR(gender = 'male'):
+    def genCPR(gender, birthday):
+        #Formatting the birthday:
+        formattedBirthday = birthday.replace('-', '')
+        formattedBirthday = formattedBirthday[0:4] + formattedBirthday[6:8]
+        #Generating the first 3 of the last 4 numbers:
         firstThree = str(random.randint(100,999))
+        #Generating the last number:
         if gender == 'male':
             options = [1,3,5,7,9]
             lastOne = str(random.choice(options))
         if gender == 'female':
             options = [2,4,6,8]
             lastOne = str(random.choice(options))
-        cpr = firstThree + lastOne
+        cpr = formattedBirthday + '-' + firstThree + lastOne
         return cpr
 
 # For The Address
