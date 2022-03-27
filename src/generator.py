@@ -14,7 +14,7 @@ class Generator:
         with open(sampleFile, "r", encoding='UTF-16') as f:
             data = json.load(f)
             #Generate Random Number 
-            rIndex = random.randint(0, len(data["persons"]-1))
+            rIndex = random.randint(0, len(data["persons"])-1)
             return data["persons"][rIndex]
 
     #Generates Random Birth Date
@@ -62,7 +62,7 @@ class Generator:
         with open(sampleFile, "r") as f:
             data = json.load(f)
             #Generate Random Number 
-            rIndex = random.randint(0, len(data["addresses"]-1))
+            rIndex = random.randint(0, len(data["addresses"])-1)
             return data["addresses"][rIndex]['name']
 
     #Generates Random street number
@@ -119,7 +119,7 @@ class Generator:
          with open(sampleFile, "r") as f:
             data = json.load(f)
             #Generate Random Number 
-            rIndex = random.randint(0, len(data["addresses"]-1))
+            rIndex = random.randint(0, len(data["addresses"])-1)
             return data["addresses"][rIndex]
 
     #Generate Random 8 digit phone number starting with the provided options
