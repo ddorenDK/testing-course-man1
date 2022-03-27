@@ -6,7 +6,7 @@ Dorin Moldovan, Radu Cazacu
 
 Coding Language: Python
 
-CI: Azure Devops
+CI: Azure Devops Pipelines (yaml)
 
 Deadline: 29-03-2022 23:59
 
