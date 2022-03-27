@@ -6,7 +6,6 @@ from secrets import choice
 class Generator:
 ### For The Person
 
-
     #Extract Random First Name, Last Name, and Gender from the sample file
     # Input - Sample File Location
     # Output - Dictionary, ex. {'name': '?', 'surname': '?', 'gender': '?'}
@@ -17,7 +16,6 @@ class Generator:
             #Generate Random Number 
             rIndex = random.randint(0, len(data["persons"]))
             return data["persons"][rIndex]
-
 
     #Generates Random Birth Date
     # Input - None
@@ -33,7 +31,6 @@ class Generator:
         year = str(random.randint(1930,2020))
         birthdate = str(day) + '-' + str(month) + '-' + str(year)
         return birthdate
-
 
     #Generate Last 4 digits of a CPR
     # Input - gender 'male' or 'female', birthday of dd-mm-yyyy format
@@ -68,7 +65,6 @@ class Generator:
             rIndex = random.randint(0, len(data["addresses"]))
             return data["addresses"][rIndex]['name']
 
-
     #Generates Random street number
     # Input - None
     # Output - String: Random number up to 3 digits, ocasionally with a uppercase Letter at the end 
@@ -82,7 +78,6 @@ class Generator:
             fullPart = firstPart
         return fullPart
 
-
     #Generate Random floor number
     # Input - None
     # Output - String: number from '1'-'99' or 'st' 
@@ -94,7 +89,6 @@ class Generator:
         else:
             floor = str(floor)
         return floor
-
 
     #Generate random door number
     # Input - None
@@ -150,8 +144,15 @@ class Generator:
         return phoneNumber
 
 
-
-
+# DEBUG
+# print(Generator.genBirthDate())
+# print(Generator.genCPR('female'))
+# print(Generator.genStreet())
+# print(Generator.genStreetNumber())
+# print(Generator.genFloor())
+# print(Generator.genDoorNumber())
+# print(Generator.genTownAndPostalCode())
+# print(Generator.genPhoneNumber())
 
 
 
@@ -167,11 +168,3 @@ class Generator:
 
 
 
-# print(Generator.genBirthDate())
-# print(Generator.genCPR('female'))
-# print(Generator.genStreet())
-# print(Generator.genStreetNumber())
-# print(Generator.genFloor())
-# print(Generator.genDoorNumber())
-# print(Generator.genTownAndPostalCode())
-print(Generator.genPhoneNumber())
