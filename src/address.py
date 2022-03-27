@@ -1,7 +1,12 @@
+from generator import Generator
+
+
 class address:
-    def __init__(self, street, number, floor, door, zipCode) -> None:
-        self.street = street
-        self.number = number
-        self.floor = floor
-        self.door = door
-        self.zipCode = zipCode
+    def __init__(self) -> None:
+        self.street = Generator.genStreet()
+        self.number = Generator.genStreetNumber()
+        self.floor = Generator.genFloor()
+        self.door = Generator.genDoorNumber()
+        townAndCode = Generator.genTownAndPostalCode()
+        self.town =  townAndCode['name']
+        self.zipCode = townAndCode['code']
