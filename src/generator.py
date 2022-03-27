@@ -83,8 +83,8 @@ class Generator:
     # Output - String: number from '1'-'99' or 'st' 
     @staticmethod
     def genFloor():
-        floor = random.randint(1,100)
-        if floor == 100:
+        floor = random.randint(0,99)
+        if floor == 0:
             floor = 'st'
         else:
             floor = str(floor)
@@ -118,7 +118,7 @@ class Generator:
     def genTownAndPostalCode(sampleFile = "./datasamples/addresses.json"):
          with open(sampleFile, "r") as f:
             data = json.load(f)
-            #Generate Random Number 
+            #Generate Random Number, 
             rIndex = random.randint(0, len(data["addresses"])-1)
             return data["addresses"][rIndex]
 
