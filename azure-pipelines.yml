@@ -43,9 +43,17 @@ stages:
 
       - bash: pip install -r requirements.txt
         displayName: 'Installing pip requirements' 
+
+  - stage: Test
+    displayName: Pytest
+    jobs:
+      - job: tests
+        steps:
+          - bash: pytest tests/test/py
+
         
   - stage: RunAndPublish
-    dependsOn: Env
+    dependsOn: Test
     displayName: Run And Publish generated Artifacts
     jobs:
       - job: RunPublish
