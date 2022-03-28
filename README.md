@@ -1,6 +1,8 @@
 [![Build Status](https://dev.azure.com/dori1411/testing-course-man1/_apis/build/status/ddorenDK.testing-course-man1?branchName=main)](https://dev.azure.com/dori1411/testing-course-man1/_build/latest?definitionId=2&branchName=main)
 ### Group G
 
+![testingMan1Long](https://user-images.githubusercontent.com/89907196/160426534-243b9104-da62-4a3b-a5de-6fbd03859a96.png)
+
 Dorin Moldovan, Radu Cazacu
 
 ---
