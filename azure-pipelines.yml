@@ -1,19 +1,59 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+parameters:
+  - name: DebugMode
+    displayName: Run the Pipeline in Debug Mode
+    type: boolean
+    default: false
+
+  - name: InstancesAmount
+    displayName: How many instances will be generated
+    type: string
+    default: '5'
+
+  - name: InstanceType
+    displayName: The type of instance to generate
+    type: string
+    default: person
+
+
+variables:
+  - name: System.Debug
+    value: ${{ parameters.DebugMode }}
+
+  - name: iAmount
+    value: ${{ parameters.InstancesAmount}}
+
+  - name: iType
+    value: ${{ parameters.InstanceType }}
 
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+stages:
+  - stage: build
+    displayName:  'Build' 
+    jobs:
+    - job: build
+      displayName: build
+      steps:
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '3.8'
+        displayName: Setting up Python
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+      - bash: pip install -r requirements.txt
+        displayName: 'Installing pip requirements' 
+
+  - stage: Run
+    dependsOn: Build
+    displayName: 'Run and Publish'
+    jobs:
+      - job: run
+        displayName: run
+        steps:
+
+        - bash: python ./src/app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
+
+        - publish: ./output/output.json
+          artifact: output.json
+    
