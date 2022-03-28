@@ -44,16 +44,21 @@ stages:
       - bash: pip install -r requirements.txt
         displayName: 'Installing pip requirements' 
 
-  - stage: Run
-    dependsOn: Build
-    displayName: 'Run and Publish'
-    jobs:
-      - job: run
-        displayName: run
-        steps:
+      - bash: python ./src/app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
 
-        - bash: python ./src/app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
+      - publish: ./output/output.json
+        artifact: output.json
 
-        - publish: ./output/output.json
-          artifact: output.json
+  # - stage: Run
+  #   dependsOn: Build
+  #   displayName: 'Run and Publish'
+  #   jobs:
+  #     - job: run
+  #       displayName: run
+  #       steps:
+
+  #       - bash: python ./src/app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
+
+  #       - publish: ./output/output.json
+  #         artifact: output.json
     
