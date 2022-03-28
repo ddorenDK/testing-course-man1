@@ -42,7 +42,7 @@ stages:
         displayName: Setting up Python
 
       - bash: ls
-      - bash: cd..
+      - bash: cd datasamples
       - bash: ls
 
       - bash: pip install -r requirements.txt
