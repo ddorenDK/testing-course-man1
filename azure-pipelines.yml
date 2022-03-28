@@ -43,13 +43,11 @@ stages:
 
       # - bash: pip install -r requirements.txt
       #   displayName: 'Installing pip requirements' 
-      - script: |
-          ls
-          cd src/datasamples
-          ls
-          pwd
 
-      - bash: python ./src/app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
+      - script: |
+          cd src
+          python ./src/app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
+
 
       - publish: ./output/output.json
         artifact: output.json
