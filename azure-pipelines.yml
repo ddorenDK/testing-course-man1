@@ -29,11 +29,11 @@ trigger:
 - main
 
 stages:
-  - stage: build
-    displayName:  'Build' 
+  - stage: Env
+    displayName:  'Create Environment' 
     jobs:
-    - job: build
-      displayName: build
+    - job: requirements
+      displayName: Install Requirements
       steps:
 
       - task: UsePythonVersion@0
@@ -41,27 +41,24 @@ stages:
           versionSpec: '3.8'
         displayName: Setting up Python
 
-      # - bash: pip install -r requirements.txt
-      #   displayName: 'Installing pip requirements' 
+      - bash: pip install -r requirements.txt
+        displayName: 'Installing pip requirements' 
+        
+  - stage: RunAndPublish
+    dependsOn: Env
+    displayName: Run And Publish generated Artifacts
+    jobs:
+      - job: RunPublish
+        displayName: Run app.py and publish artifacts
+        steps:
+        - script: |
+            cd src
+            python app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
 
-      - script: |
-          cd src
-          python app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
+
+        - publish: ./output/output.json
+          displayName: Publish Artifacts
+          artifact: output.json
 
 
-      - publish: ./output/output.json
-        artifact: output.json
-
-  # - stage: Run
-  #   dependsOn: Build
-  #   displayName: 'Run and Publish'
-  #   jobs:
-  #     - job: run
-  #       displayName: run
-  #       steps:
-
-  #       - bash: python ./src/app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
-
-  #       - publish: ./output/output.json
-  #         artifact: output.json
     
