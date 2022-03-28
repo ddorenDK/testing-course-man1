@@ -46,7 +46,7 @@ stages:
 
       - script: |
           cd src
-          python ./src/app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
+          python app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
 
 
       - publish: ./output/output.json
