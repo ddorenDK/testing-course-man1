@@ -44,13 +44,14 @@ stages:
           versionSpec: '3.8'
         displayName: Setting up Python
 
-      - bash: pip install -r requirements.txt
-        displayName: 'Installing pip requirements' 
+      # - bash: pip install -r requirements.txt
+      #   displayName: 'Installing pip requirements' 
 
       - script: |
           ls
           cd src/datasamples
           ls
+          pwd
 
       - bash: python ./src/app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
 
