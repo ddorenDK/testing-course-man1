@@ -66,7 +66,7 @@ The following testing-related tasks must be implemented:
 - Designing the test cases based on:
   - Black-box design techniques (manual analysis)
   - White-box design techniques (automated analysis with tools)
-- Use static testing tools toanalyse and improve the code. Also for white-box analysis, if the chosen unit testing framework does not provide it
+- Use static testing tools to analyse and improve the code. Also for white-box analysis, if the chosen unit testing framework does not provide it
 - Create a Continuous Integration job or pipeline to test the integration of the application
 - Run all unit and integration tests in the CI process
 
