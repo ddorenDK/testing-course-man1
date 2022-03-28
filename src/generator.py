@@ -10,7 +10,7 @@ class Generator:
     # Input - Sample File Location
     # Output - Dictionary, ex. {'name': '?', 'surname': '?', 'gender': '?'}
     @staticmethod
-    def genFullNameAndGender(sampleFile = "./person-names.json"):
+    def genFullNameAndGender(sampleFile = "person-names.json"):
         with open(sampleFile, "r", encoding='UTF-16') as f:
             data = json.load(f)
             #Generate Random Number 
@@ -58,7 +58,7 @@ class Generator:
     # Input - sample file location
     # Output - String: address, ex: 'Leensgade'
     @staticmethod
-    def genStreet(sampleFile = "./street-names.json"):
+    def genStreet(sampleFile = "street-names.json"):
         with open(sampleFile, "r") as f:
             data = json.load(f)
             #Generate Random Number 
@@ -115,7 +115,7 @@ class Generator:
     # Input - Sample File Location
     # Output - Dictionary: ex. {'name': '?', 'code': '?'}
     @staticmethod
-    def genTownAndPostalCode(sampleFile = "./addresses.json"):
+    def genTownAndPostalCode(sampleFile = "addresses.json"):
          with open(sampleFile, "r") as f:
             data = json.load(f)
             #Generate Random Number, 
