@@ -44,6 +44,8 @@ stages:
       - bash: ls
       - bash: cd datasamples
       - bash: ls
+      - bash: cd datasamples
+      - bash: ls
 
       - bash: pip install -r requirements.txt
         displayName: 'Installing pip requirements' 
