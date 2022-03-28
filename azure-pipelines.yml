@@ -28,9 +28,6 @@ variables:
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
-
 stages:
   - stage: build
     displayName:  'Build' 
@@ -46,7 +43,6 @@ stages:
 
       # - bash: pip install -r requirements.txt
       #   displayName: 'Installing pip requirements' 
-
       - script: |
           ls
           cd src/datasamples
