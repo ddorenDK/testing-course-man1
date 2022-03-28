@@ -17,6 +17,8 @@ def main():
   datatype = args.datatype
 
   if datatype == 'person':
+    #TODO
+    #Extract Method
     jsonString = '['
     for it in range (1, instances+1):
       tempPerson = person()
