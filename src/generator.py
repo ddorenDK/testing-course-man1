@@ -29,8 +29,7 @@ class Generator:
         if len(month) < 2:
             month = '0' + month
         year = str(random.randint(1930,2020))
-        birthdate = str(day) + '-' + str(month) + '-' + str(year)
-        return birthdate
+        return str(day) + '-' + str(month) + '-' + str(year)
 
     #Generate Last 4 digits of a CPR
     # Input - gender 'male' or 'female', birthday of dd-mm-yyyy format
@@ -72,11 +71,11 @@ class Generator:
     def genStreetNumber():
         firstPart = str(random.randint(1,999))
         optionalTrigger = random.choice(['true','false'])
-        if optionalTrigger == 'true':
-            fullPart = firstPart + str(random.choice(string.ascii_letters).upper())
-        else: 
-            fullPart = firstPart
-        return fullPart
+        return (
+            firstPart + str(random.choice(string.ascii_letters).upper())
+            if optionalTrigger == 'true'
+            else firstPart
+        )
 
     #Generate Random floor number
     # Input - None
@@ -84,10 +83,7 @@ class Generator:
     @staticmethod
     def genFloor():
         floor = random.randint(0,99)
-        if floor == 0:
-            floor = 'st'
-        else:
-            floor = str(floor)
+        floor = 'st' if floor == 0 else str(floor)
         return floor
 
     #Generate random door number
@@ -101,14 +97,12 @@ class Generator:
         if option1 < 2:
             letters = random.choice(['th','mf','tv'])
             number = str(random.randint(1,50))
-            doorNumber = letters + number
-            return doorNumber
+            return letters + number
         else:
             letter = str(random.choice(string.ascii_letters).lower())
             dash = random.choice(['','-'])
             number = str(random.randint(1,50))
-            doorNumber = letter + dash + number
-            return doorNumber
+            return letter + dash + number
 
     
     #Extract Random Town and Postcode from the sample file

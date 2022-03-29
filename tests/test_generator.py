@@ -27,15 +27,21 @@ def test_genCPR():
     output = Generator.genCPR('female','12-12-1988')
     assert(int(output[-1:]) % 2 == 0)
 
-def test_getStreet():
+def test_genStreet():
     output = Generator.genStreet()
     #Check if alphabetical
     assert(output.isalpha())
 
-def test_streetNumber():
+def test_genStreetNumber():
     output = Generator.genStreetNumber()
     #Check if is numeric
     assert(output[:-1].isnumeric() or output.isnumeric())
+
+def test_genDoorNumber():
+    output = Generator.genDoorNumber()
+    assert(output.isnumeric())
+
+
 
 
 
