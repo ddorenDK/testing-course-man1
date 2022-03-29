@@ -11,6 +11,7 @@ TODO:
 - Improve the unit Tests
 - Integration Tests
 - Simplify the code
+- Report
 
 Expansion:
 - Use setup.cfg instead of requirements.txt, (Test, Dev)
