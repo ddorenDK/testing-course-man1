@@ -1,6 +1,7 @@
 import argparse
 import json
-from random import random
+import random
+
 from person import person
 from address import address
 from generator import Generator
@@ -60,7 +61,7 @@ def main():
     for it in range (1, instances+1):
       tempBirthday = Generator.genBirthDate()
       genderOptions = ['male','female']
-      tempGender = random.choices(genderOptions)
+      tempGender = str(random.choice(genderOptions))
       tempCPR = Generator.genCPR(tempGender, tempBirthday)
       tempJsonString = '{"cpr":'
       tempJsonString += f'"{tempCPR}"'
