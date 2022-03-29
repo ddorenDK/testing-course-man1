@@ -13,6 +13,10 @@ parameters:
     displayName: The type of instance to generate
     type: string
     default: person
+    values:
+      - person
+      - address
+      - birthday
 
 
 variables:
@@ -25,8 +29,8 @@ variables:
   - name: iType
     value: ${{ parameters.InstanceType }}
 
-# trigger:
-# - main
+trigger:
+- main
 
 stages:
   - stage: EnvAndTests

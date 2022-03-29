@@ -22,6 +22,7 @@ def main():
   if datatype == 'person':
     #TODO
     #Extract Method
+    #Test Method
     jsonString = '['
     for it in range (1, instances+1):
       tempPerson = person()
@@ -35,8 +36,9 @@ def main():
 
   #TODO
   #Extract Method
+  #Test Method
   if datatype == 'address':
-    jsonString = '['
+    jsonString = '[ {'
     for it in range (1, instances+1):
       tempAddress = address()
       tempJsonString = str(tempAddress.__dict__).replace('{','')
