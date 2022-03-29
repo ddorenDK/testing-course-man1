@@ -60,7 +60,7 @@ def main():
     for it in range (1, instances+1):
       tempBirthday = Generator.genBirthDate()
       genderOptions = ['male','female']
-      tempGender = random.choice(genderOptions)
+      tempGender = random.choices(genderOptions)
       tempCPR = Generator.genCPR(tempGender, tempBirthday)
       tempJsonString = '{"cpr":'
       tempJsonString += f'"{tempCPR}"'
