@@ -2,7 +2,7 @@ import argparse
 import json
 from person import person
 from address import address
-from src.generator import Generator
+from generator import Generator
 
 #Variables
 outputPath = "../output/output.json"
