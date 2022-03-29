@@ -2,6 +2,7 @@ import argparse
 import json
 from person import person
 from address import address
+from src.generator import Generator
 
 #Variables
 outputPath = "../output/output.json"
@@ -49,6 +50,26 @@ def main():
     jsonString += ']'
     with open(outputPath, "w+") as file:
       file.write(jsonString)
+
+  #TODO
+  #Extract Method
+  #Test Method
+  if datatype == 'birthday':
+    jsonString = '['
+    for it in range (1, instances+1):
+      tempBirthday = Generator.genBirthDate()
+      tempJsonString = '{"birthdate":'
+      tempJsonString += f'"{tempBirthday}"'
+      tempJsonString += '}'
+      if it is not instances:
+        tempJsonString += ','
+      jsonString += tempJsonString
+      jsonString += ']'
+    with open(outputPath, "w+") as file:
+      file.write(jsonString)
+
+
+
       
         
 
