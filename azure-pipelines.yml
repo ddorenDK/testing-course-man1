@@ -44,14 +44,9 @@ stages:
       - bash: pip install -r requirements.txt
         displayName: 'Installing pip requirements' 
 
-  - stage: Test
-    displayName: Pytest
-    jobs:
-      - job: tests
-        steps:
-          - script: |
-              cd app/tests
-              pytest
+      - script: |
+          cd app/tests
+          pytest
 
         
   - stage: RunAndPublish
