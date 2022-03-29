@@ -1,5 +1,6 @@
 import argparse
 import json
+from random import random
 from person import person
 from address import address
 from generator import Generator
@@ -10,7 +11,7 @@ outputPath = "../output/output.json"
 #Arguments
 parser = argparse.ArgumentParser(description = "Generates Fake information for non-existing danish persons")
 parser.add_argument("--instances", type = int, default = 1, help = "How many data instances to generate, value = int")
-parser.add_argument("--datatype", type = str, default = "address",
+parser.add_argument("--datatype", type = str, default = "person",
   choices=['cpr', 'namegender', 'namegenderbirthdate', 'cprnamegender', 'cprnamegenderbirthdate', 'address', 'phone', 'person'], help = "What to generate" )
 args = parser.parse_args()
 
@@ -58,8 +59,11 @@ def main():
     jsonString = '['
     for it in range (1, instances+1):
       tempBirthday = Generator.genBirthDate()
-      tempJsonString = '{"birthdate":'
-      tempJsonString += f'"{tempBirthday}"'
+      genderOptions = ['male','female']
+      tempGender = random.choice(genderOptions)
+      tempCPR = Generator.genCPR(tempGender, tempBirthday)
+      tempJsonString = '{"cpr":'
+      tempJsonString += f'"{tempCPR}"'
       tempJsonString += '}'
       if it is not instances:
         tempJsonString += ','

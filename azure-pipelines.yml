@@ -16,7 +16,7 @@ parameters:
     values:
       - person
       - address
-      - birthday
+      - cpr
 
 
 variables:
