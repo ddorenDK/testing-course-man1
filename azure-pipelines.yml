@@ -51,7 +51,7 @@ stages:
         steps:
           - script: |
               cd app/tests
-              py.test
+              pytest
 
         
   - stage: RunAndPublish
