@@ -1,5 +1,7 @@
-from generator import Generator
 import pytest
+
+from src.generator import Generator
+
 
 
 def test_genFullNameAndGender():

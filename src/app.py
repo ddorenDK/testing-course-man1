@@ -12,6 +12,8 @@ parser.add_argument("--datatype", type = str, default = "person",
   choices=['cpr', 'namegender', 'namegenderbirthdate', 'cprnamegender', 'cprnamegenderbirthdate', 'address', 'phone', 'person'], help = "What to generate" )
 args = parser.parse_args()
 
+#TODO
+#Bring proper structure to main
 def main():
   instances = args.instances
   datatype = args.datatype
