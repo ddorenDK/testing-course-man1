@@ -29,7 +29,7 @@ variables:
 # - main
 
 stages:
-  - stage: Env
+  - stage: EnvAndTests
     displayName:  'Create Environment' 
     jobs:
     - job: requirements
@@ -45,19 +45,19 @@ stages:
         displayName: 'Installing pip requirements' 
 
       - script: |
-          cd app/tests
+          cd tests
           pytest
 
         
   - stage: RunAndPublish
-    dependsOn: Env
+    dependsOn: EnvAndTests
     displayName: Run And Publish generated Artifacts
     jobs:
       - job: RunPublish
         displayName: Run app.py and publish artifacts
         steps:
         - script: |
-            cd app/src
+            cd src
             python app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
 
 
