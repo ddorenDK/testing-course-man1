@@ -7,7 +7,6 @@ TODO:
 - Finish all the methods in app.py
 - Extract the methods from app.py
 - Test the extracted methods
-- use setup.cfg instead of requirements.txt
 - Improve the unit Tests
 - Integration Tests
 - Simplify the code
