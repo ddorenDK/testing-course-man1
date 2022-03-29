@@ -55,7 +55,7 @@ def main():
   #TODO
   #Extract Method
   #Test Method
-  if datatype == 'birthday':
+  if datatype == 'cpr':
     jsonString = '['
     for it in range (1, instances+1):
       tempBirthday = Generator.genBirthDate()
