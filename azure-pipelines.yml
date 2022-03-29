@@ -49,7 +49,9 @@ stages:
     jobs:
       - job: tests
         steps:
-          - bash: pytest tests/test/py
+          - script: |
+              cd app/tests
+              py.test
 
         
   - stage: RunAndPublish
@@ -60,7 +62,7 @@ stages:
         displayName: Run app.py and publish artifacts
         steps:
         - script: |
-            cd src
+            cd app/src
             python app.py --instances ${{variables.iAmount}} --datatype ${{variables.iType}}
 
 
