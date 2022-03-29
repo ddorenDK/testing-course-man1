@@ -69,7 +69,7 @@ def main():
       if it is not instances:
         tempJsonString += ','
       jsonString += tempJsonString
-      jsonString += ']'
+    jsonString += ']'
     with open(outputPath, "w+") as file:
       file.write(jsonString)
 
