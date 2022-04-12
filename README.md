@@ -4,13 +4,14 @@
 ![testingMan1Long](https://user-images.githubusercontent.com/89907196/160426534-243b9104-da62-4a3b-a5de-6fbd03859a96.png)
 
 TODO:
-- Finish all the methods in app.py
-- Extract the methods from app.py
-- Test the extracted methods
-- Improve the unit Tests
-- Integration Tests
-- Simplify the code
-- Report
+1. Finish the tests for the generator
+2. Finish all the methods in app.py
+3. Redo the methods in app.py
+4. Extract the methods from app.py
+5. Write Tests the extracted methods
+6. Review the tests
+7. Simplify the code
+8. Write the Report
 
 Expansion:
 - Use setup.cfg instead of requirements.txt, (Test, Dev)
