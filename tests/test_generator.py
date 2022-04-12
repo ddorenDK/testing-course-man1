@@ -10,7 +10,7 @@ def test_genFullNameAndGender():
     assert isinstance(output['name'], str)
     assert isinstance(output['surname'], str)
     assert isinstance(output['gender'], str)
-    assert (output['gender'] == 'male' or output['gender'] == 'female')
+    assert output['gender'] in ['male', 'female']
 
 def test_genBirthDate():
     output = Generator.genBirthDate()
@@ -44,6 +44,8 @@ def test_genPhoneNumber():
     assert(output.isnumeric)
     assert(isinstance(output, str))
     assert(output.startswith(allowedStarts))
+
+    #test
     
 
 

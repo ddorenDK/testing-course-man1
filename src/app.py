@@ -31,7 +31,7 @@ def main():
       tempPerson = person()
       tempJsonString = tempPerson.toJson()
       if it is not instances:
-        tempJsonString = tempJsonString + ','
+        tempJsonString += ','
       jsonString += tempJsonString
     jsonString += ']'
     with open(outputPath, "w+") as file:
@@ -47,7 +47,7 @@ def main():
       tempJsonString = str(tempAddress.__dict__).replace('{','')
       tempJsonString = tempJsonString.replace("'",'"')
       if it is not instances:
-        tempJsonString = tempJsonString + ','
+        tempJsonString += ','
       jsonString += tempJsonString
     jsonString += ']'
     with open(outputPath, "w+") as file:
