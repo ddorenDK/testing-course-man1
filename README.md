@@ -3,6 +3,7 @@
 **NOT BEING WORKED ON AS I JOINED A TEAM**
 
 ### Group G
+Dorin Moldovan
 ![testingMan1Long](https://user-images.githubusercontent.com/89907196/160426534-243b9104-da62-4a3b-a5de-6fbd03859a96.png)
 
 TODO:
@@ -20,8 +21,6 @@ Expansion:
 - Expand the pipeline 
 - API
 - Database
-
-Dorin Moldovan
 
 ---
 
