@@ -1,10 +1,13 @@
 [![Build Status](https://dev.azure.com/dori1411/testing-course-man1/_apis/build/status/ddorenDK.testing-course-man1?branchName=main)](https://dev.azure.com/dori1411/testing-course-man1/_build/latest?definitionId=2&branchName=main)
 
+**NOT BEING WORKED ON AS I JOINED A TEAM**
+
 ### Group G
+Dorin Moldovan
 ![testingMan1Long](https://user-images.githubusercontent.com/89907196/160426534-243b9104-da62-4a3b-a5de-6fbd03859a96.png)
 
 TODO:
-1. Finish the tests for the generator
+1. Finish the tests for the generator (Improve tests, more cases..)
 2. Finish all the methods in app.py
 3. Redo the methods in app.py
 4. Extract the methods from app.py
@@ -18,8 +21,6 @@ Expansion:
 - Expand the pipeline 
 - API
 - Database
-
-Dorin Moldovan, Radu Cazacu
 
 ---
 
