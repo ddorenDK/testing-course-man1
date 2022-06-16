@@ -24,12 +24,12 @@ class Generator:
     def genBirthDate():
         day = str(random.randint(1,28))
         if len(day) < 2:
-            day = '0' + day
+            day = f'0{day}'
         month = str(random.randint(1,12))
         if len(month) < 2:
-            month = '0' + month
+            month = f'0{month}'
         year = str(random.randint(1930,2020))
-        return str(day) + '-' + str(month) + '-' + str(year)
+        return f'{day}-{month}-{year}'
 
     #Generate Last 4 digits of a CPR
     # Input - gender 'male' or 'female', birthday of dd-mm-yyyy format
@@ -38,7 +38,7 @@ class Generator:
     def genCPR(gender, birthday):
         #Formatting the birthday:
         formattedBirthday = birthday.replace('-', '')
-        formattedBirthday = formattedBirthday[0:4] + formattedBirthday[6:8]
+        formattedBirthday = formattedBirthday[:4] + formattedBirthday[6:8]
         #Generating the first 3 of the last 4 numbers:
         firstThree = str(random.randint(100,999))
         #Generating the last number:
@@ -48,8 +48,7 @@ class Generator:
         if gender == 'female':
             options = [2,4,6,8]
             lastOne = str(random.choice(options))
-        cpr = formattedBirthday + '-' + firstThree + lastOne
-        return cpr
+        return f'{formattedBirthday}-{firstThree}{lastOne}'
 
 # For The Address
 
